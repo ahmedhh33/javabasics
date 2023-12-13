@@ -2,6 +2,8 @@ package com.example.demo2;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 public class Main {
@@ -49,6 +51,29 @@ public class Main {
 
         System.out.println("Compressed List: " + compressedList);
 
+
+        HashMap<String,String> INFO = new HashMap<>();
+        INFO.put("name","ahmed");
+        INFO.put("age","22");
+        INFO.put("alimnu","34");
+
+        System.out.println("age: "+INFO.get("age"));
+
+
+        HashSet<Integer> uniqElemennt = new HashSet<>();
+        uniqElemennt.add(1);
+        uniqElemennt.add(2);
+        uniqElemennt.add(3);
+        uniqElemennt.add(1);//se it will not change or print any thing here becouse it will repeated not allowed
+        uniqElemennt.add(2);
+
+        for (int ele:uniqElemennt){System.out.println(ele);}//output 123
+
+        String [] array = {"A","B","C","A", "D","B","Z","Y","R","Z"};
+
+        System.out.println("BefirFiltering: " + array);
+        System.out.println("AfterFiltering: " + FilterUniqueElement(array));
+
     }
 
     public  static ArrayList<Integer> filterArray (int[] inputarray)
@@ -66,6 +91,18 @@ public class Main {
             }
         }
 
-return array2;
+        return array2;
     }
+
+
+    public  static  HashSet<String> FilterUniqueElement(String[] inputs){
+        HashSet<String> finalelemnts = new HashSet<>();
+        for (String elm: inputs) {
+
+            finalelemnts.add(elm);
+        }
+        return finalelemnts;
+
+    }
+
 }

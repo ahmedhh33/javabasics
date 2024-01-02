@@ -74,6 +74,12 @@ public class Main {
         System.out.println("BefirFiltering: " + array);
         System.out.println("AfterFiltering: " + FilterUniqueElement(array));
 
+
+        //##################################################################
+
+            int[] inputArqray = {2, 1, 3, 2, 1, 7, 3, 6, 1, 2, 58, 66, 7};
+            findFrequency(inputArqray);
+
     }
 
     public  static ArrayList<Integer> filterArray (int[] inputarray)
@@ -103,6 +109,18 @@ public class Main {
         }
         return finalelemnts;
 
+    }
+
+    private static void findFrequency(int[] arr) {
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+
+        for (int num : arr) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        }
+
+        for (int key : frequencyMap.keySet()) {
+            System.out.println(key + " is repeated " + frequencyMap.get(key) + " times");
+        }
     }
 
 }
